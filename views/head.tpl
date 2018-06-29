@@ -22,9 +22,19 @@
 		<div class="container user-content pt-35">
 			<div class="admin-nav mb-50">
 				<a class="admin-nav__link" href="index.php">Все фильмы</a>
-				<a class="admin-nav__link" href="new.php">Добавить новый фильм</a>
+				<?php if ($status = isAdmin()) { ?>
+					<a class="admin-nav__link" href="new.php">Добавить новый фильм</a>
+				<?php } ?>
+				
 				<a class="admin-nav__link" href="request.php">Укажите ваши данные</a>
+
+				<?php if (isset($_SESSION['status'])) {?>
+					<a class="admin-nav__link" href="log-out.php">Выход</a>
+				<?php } else { ?>
+					<a class="admin-nav__link" href="login.php">Вход на сайт</a>
+				<?php }?>
 			</div>
+
 
 			<?php if (isset($_COOKIE['user-name']) ) {?>
 				<div class="mb-50">
@@ -34,6 +44,4 @@
 							Привет, <?=$_COOKIE['user-name']?>!
 						<?php } ?>
 				</div>
-			<?php } ?>
-
-			
+			<?php } ?> 
