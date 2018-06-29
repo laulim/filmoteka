@@ -23,4 +23,17 @@
 			<div class="admin-nav mb-50">
 				<a class="admin-nav__link" href="index.php">Все фильмы</a>
 				<a class="admin-nav__link" href="new.php">Добавить новый фильм</a>
+				<a class="admin-nav__link" href="request.php">Укажите ваши данные</a>
 			</div>
+
+			<?php if (isset($_COOKIE['user-name']) ) {?>
+				<div class="mb-50">
+					<?php if (isset($_COOKIE['user-city'])) {?>
+						Привет, <?=$_COOKIE['user-name']?> из города <?=$_COOKIE['user-city']?>!
+					<?php } else {?>
+							Привет, <?=$_COOKIE['user-name']?>!
+						<?php } ?>
+				</div>
+			<?php } ?>
+
+			
