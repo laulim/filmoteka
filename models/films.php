@@ -13,7 +13,7 @@ function films_all($link){
 	return $films;
 }
 
-function new_film($link, $title, $genre, $year, $description, $photo){
+function new_film($link, $title, $genre, $year, $description){
 	include(ROOT . "functions/resize-photo.php");
 	// Запись данных в БД
 	$query = "INSERT INTO `films` (title, genre, year, description, photo) VALUES (
@@ -46,7 +46,7 @@ function get_film($link, $id){
 	return $film;
 }
 
-function update_film($link, $title, $genre, $year, $description, $photo, $id){
+function update_film($link, $title, $genre, $year, $description, $id){
 	// echo "<pre>";
 	// print_r($_FILES);
 	// echo "</pre>";

@@ -1,6 +1,7 @@
 <?php 
 
 require('config.php');
+require('functions/login-func.php');
 
 
 include ('views/head.tpl'); 
