@@ -22,7 +22,7 @@ if (array_key_exists('update-film', $_POST)) {
 	// Если ошибок нет - сохраняем фильм
 	if (empty($errors)) {
 		// Запись данных в БД
-		$result = update_film($link, $_POST['title'], $_POST['genre'], $_POST['year'], $_POST['description'], $_POST['photo'], $_GET['id']);
+		$result = update_film($link, $_POST['title'], $_POST['genre'], $_POST['year'], $_POST['description'], $_GET['id']);
 
 		if ($result) {
 			$resultInfo = "Фильм был успешно отредактирован!";
